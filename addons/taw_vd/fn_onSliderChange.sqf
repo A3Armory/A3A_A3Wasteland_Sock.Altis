@@ -18,6 +18,10 @@ switch (_mode) do
 		tawvd_foot = round(_value);
 		ctrlSetText[2902,format["%1",tawvd_foot]];
 		[] call TAWVD_fnc_updateViewDistance;
+		if(tawvd_syncObject) then {
+			sliderSetPosition[2941, tawvd_object];
+			ctrlSetText[2942,format["%1",tawvd_object]];
+		};
 	};
 	
 	case 1:
@@ -41,7 +45,3 @@ switch (_mode) do
 	};
 };
 
-if(tawvd_syncObject) then {
-	sliderSetPosition[2941, tawvd_object];
-	ctrlSetText[2942,format["%1",tawvd_object]];
-};

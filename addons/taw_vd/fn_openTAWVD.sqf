@@ -18,7 +18,13 @@ ctrlSetText[2942, format["%1", tawvd_object]];
 	slidersetRange [_x select 0,100,2500];
 	((findDisplay 2900) displayCtrl (_x select 0)) sliderSetSpeed [100,100,100];
 	sliderSetPosition[_x select 0, _x select 1];
-} foreach [[2901,tawvd_foot],[2911,tawvd_car],[2921,tawvd_air],[2941,tawvd_object]];
+} foreach [[2901,tawvd_foot],[2941,tawvd_object]];
+
+{
+	slidersetRange [_x select 0,100,5000];
+	((findDisplay 2900) displayCtrl (_x select 0)) sliderSetSpeed [100,100,100];
+	sliderSetPosition[_x select 0, _x select 1];
+} foreach [[2911,tawvd_car],[2921,tawvd_air]];
 
 ((finddisplay 2900) displayCtrl 2931) cbSetChecked tawvd_syncObject;
 
