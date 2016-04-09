@@ -431,7 +431,7 @@ class TAW_VD
 		class ObjectSyncText : TAWVD_RscText
 		{
 			idc = -1;
-			text = "Sync with view";
+			text = "Sync with view (Up to 2500m)";
 			x = 0.345; y = 0.596;
 			w = 0.35; h = 0.04;
 		};
