@@ -71,11 +71,6 @@ sh_isBeacon = {
   (_obj getVariable ["a3w_spawnBeacon", false])
 };
 
-sh_isCamera = {
-  ARGVX4(0,_obj,objNull,false);
-  (_obj getVariable ["a3w_cctv_camera", false])
-};
-
 sh_isBoomerang = {
   ARGVX4(0,_obj,objNull,false);
   (_obj getVariable ["has_boomerang", false])

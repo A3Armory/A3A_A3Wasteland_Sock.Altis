@@ -76,7 +76,6 @@ A3W_warchestSaving = 0;            // Save warchest objects deployed by players 
 A3W_warchestMoneySaving = 0;       // Save warchest team money between server restarts (0 = no, 1 = yes)
 A3W_spawnBeaconSaving = 1;         // Save spawn beacons between server restarts (0 = no, 1 = yes)
 A3W_objectLifetime = 5*24;         // Maximum lifetime in hours for saved objects (baseparts, crates, etc. except vehicles) across server restarts (0 = no time limit)
-A3W_cctvCameraSaving = 1;          // Save cctv cameras between restarts (0 = no, 1 = yes)
 A3W_mineSaving = 1;         	   // Save mines between server restarts (0 = no, 1 = yes)
                                    // List of mine ammo classes that can be saved
 A3W_saveable_mines_list = ["APERSTripMine_Wire_Ammo", "APERSBoundingMine_Range_Ammo", "APERSMine_Range_Ammo", "ATMine_Range_Ammo", "SLAMDirectionalMine_Wire_Ammo" ];
