@@ -105,6 +105,7 @@ class Mission
 		rainForced=1;
 		year=2035;
 		month=6;
+		hour=6;
 		minute=0;
 		startFogDecay=0;
 		forecastFogDecay=0;
@@ -2127,6 +2128,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						description="Diver";
 						isPlayable=1;
 					};
 					id=990;
