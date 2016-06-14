@@ -32,14 +32,14 @@
 	["Push vehicle backward", "server\functions\pushVehicle.sqf", [-2.5], 1, false, false, "", "[-2.5] call canPushWatercraft"],
 
 	["<t color='#FF0000'>Emergency eject</t>",  { [[], fn_emergencyEject] execFSM "call.fsm" }, [], -9, false, true, "", "(vehicle player) isKindOf 'Air' && !((vehicle player) isKindOf 'ParachuteBase')"],
-	["<t color='#FF00FF'>Open magic parachute</t>", { [[], fn_openParachute] execFSM "call.fsm" }, [], 20, true, true, "", "vehicle player == player && (getPos player) select 2 > 2.5"],
+	["<t color='#FF00FF'>Open magic parachute</t>", A3W_fnc_openParachute, [], 20, true, true, "", "vehicle player == player && (getPos player) select 2 > 2.5"],
 
-	["<t color='#FF66CC'>Give up!</t>",  "addons\Surrender\fn_surrender_request.sqf", [], 1,false,false,"","(isPlayer cursorTarget) && {[cursorTarget] call canSuggestToSurrender}"],	
-	["<t color='#47B247'>Surrender</t>",  "addons\Surrender\fn_surrender_confirm.sqf", [], 1,false,false,"","(isPlayer cursorTarget) && {[] call wasSuggestedToSurrender}"],	
-	["<t color='#FF0000'>Extort</t>",  "addons\Surrender\fn_surrender_actions.sqf", [cursorTarget,"extort"], 1,false,false,"","(isPlayer cursorTarget) && {(cursorTarget getVariable ['sur_isSurrendering',false]) && {(player distance cursorTarget) < 5}}"],	
-	["<t color='#FF0000'>Look in pockets</t>",  "addons\Surrender\fn_surrender_actions.sqf", [cursorTarget,"money"], 1,false,false,"","(isPlayer cursorTarget) && {(cursorTarget getVariable ['sur_isSurrendering',false]) && {(player distance cursorTarget) < 5}}"],	
+	["<t color='#FF66CC'>Give up!</t>",  "addons\Surrender\fn_surrender_request.sqf", [], 1,false,false,"","(isPlayer cursorTarget) && {[cursorTarget] call canSuggestToSurrender}"],
+	["<t color='#47B247'>Surrender</t>",  "addons\Surrender\fn_surrender_confirm.sqf", [], 1,false,false,"","(isPlayer cursorTarget) && {[] call wasSuggestedToSurrender}"],
+	["<t color='#FF0000'>Extort</t>",  "addons\Surrender\fn_surrender_actions.sqf", [cursorTarget,"extort"], 1,false,false,"","(isPlayer cursorTarget) && {(cursorTarget getVariable ['sur_isSurrendering',false]) && {(player distance cursorTarget) < 5}}"],
+	["<t color='#FF0000'>Look in pockets</t>",  "addons\Surrender\fn_surrender_actions.sqf", [cursorTarget,"money"], 1,false,false,"","(isPlayer cursorTarget) && {(cursorTarget getVariable ['sur_isSurrendering',false]) && {(player distance cursorTarget) < 5}}"],
 	["<t color='#FF0000'>Release</t>",  "addons\Surrender\fn_surrender_actions.sqf", [cursorTarget,"release"], 1,false,false,"","(isPlayer cursorTarget) && {(cursorTarget getVariable ['sur_isSurrendering',false]) && {(player distance cursorTarget) < 5}}"]
-	
+
 	//["Airdrop Menu", "addons\APOC_Airdrop_Assistance\APOC_cli_menu.sqf",[], -100, false, false]
 ];
 
@@ -51,7 +51,7 @@ if !(288520 in getDLCs 1) then
 };
 
 // Morehehe...
-if !(304380 in getDLCs 1) then 
+if !(304380 in getDLCs 1) then
 {
 	[player, ["<img image='client\icons\driver.paa'/> Get in as Pilot", "client\actions\moveInDriver.sqf", [], 6, true, true, "", "(locked cursorTarget != 2) && ((cursorTarget isKindOf 'B_Heli_Transport_03_F') or (cursorTarget isKindOf 'B_Heli_Transport_03_unarmed_F') or (cursorTarget isKindOf 'Heli_Transport_04_base_F')) && player distance cursorTarget < 10 && isNull driver cursorTarget"]] call fn_addManagedAction;
 	[player, ["<img image='client\icons\gunner.paa'/> Get in as Copilot", "client\actions\moveInTurret.sqf", [0], 6, true, true, "", "(locked cursorTarget != 2) && ((cursorTarget isKindOf 'B_Heli_Transport_03_F') or (cursorTarget isKindOf 'B_Heli_Transport_03_unarmed_F') or (cursorTarget isKindOf 'Heli_Transport_04_base_F')) && player distance cursorTarget < 10 && isNull (cursorTarget turretUnit [0])"]] call fn_addManagedAction;
@@ -63,6 +63,6 @@ if (["A3W_purchasedVehicleSaving"] call isConfigOn) then
 {
 	[player, ["<img image='client\icons\save.paa'/> Save Vehicle", "addons\vsave\vehicleSave.sqf", [], -9.5, false, true, "", "call SaveVehicleCheck"]] call fn_addManagedAction;
 	[player, ["<img image='client\icons\save.paa'/> Re\Save Vehicle", "addons\vsave\vehicleReSave.sqf", [], -9.5, false, true, "", "call ReSaveVehicleCheck"]] call fn_addManagedAction;
-	[player, ["<img image='client\icons\save.paa'/> Save Weapon", "addons\vsave\weaponSave.sqf", [], -9.5, false, true, "", "call SaveWeaponCheck"]] call fn_addManagedAction;  
+	[player, ["<img image='client\icons\save.paa'/> Save Weapon", "addons\vsave\weaponSave.sqf", [], -9.5, false, true, "", "call SaveWeaponCheck"]] call fn_addManagedAction;
 	[player, ["<img image='client\icons\save.paa'/> Re\Save Weapon", "addons\vsave\weaponReSave.sqf", [], -9.5, false, true, "", "call ReSaveWeaponCheck"]] call fn_addManagedAction;
 };
