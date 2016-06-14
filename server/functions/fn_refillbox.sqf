@@ -127,7 +127,8 @@ switch (_boxType) do
 		_boxItems =
 		[
 			// Item type, Item class(es), # of items, # of magazines per weapon
-			["wep", ["MMG_02_black_F", "MMG_02_camo_F","MMG_02_sand_F","MMG_01_hex_F","MMG_01_tan_F"], RANDOM_BETWEEN(1,3), RANDOM_BETWEEN(2,4)],
+			["wep", ["MMG_02_black_F", "MMG_02_camo_F","MMG_02_sand_F"], 1, RANDOM_BETWEEN(1,3)],
+			["wep", ["MMG_01_hex_F","MMG_01_tan_F"], RANDOM_BETWEEN(1,2), RANDOM_BETWEEN(1,3)],			
 			["itm", ["V_PlateCarrier3_rgr", "V_TacVest_camo", "V_PlateCarrierGL_rgr"], RANDOM_BETWEEN(0,2)],
 			["bac", ["B_Carryall_mcamo", "B_Kitbag_mcamo"], RANDOM_BETWEEN(1,3)],
 			["itm", ["bipod_01_F_blk", "bipod_02_F_hex"], RANDOM_BETWEEN(2,4)],
