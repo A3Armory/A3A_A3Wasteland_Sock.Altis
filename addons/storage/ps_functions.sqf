@@ -52,9 +52,9 @@ ps_create_boxes = {
     _town_pos = position _town;
     if (isARRAY(ps_cities_whitelist) && {count(ps_cities_whitelist) > 0 && {not(_town_name in ps_cities_whitelist)}}) exitWith {};
   
-    _garage = (nearestObjects [_town_pos, ["Land_i_Garage_V2_F", "Sign_Arrow_Yellow_F"], 300]) select 0;
+    _garage = (nearestObjects [_town_pos, ["Land_i_Garage_V2_F", "Land_Shed_06_F"], 300]) select 0;
     if (!isOBJECT(_garage)) exitWith {
-      diag_log format["No garage in %1", _town_name];
+      diag_log format["No storage in %1", _town_name];
     };
   
     _name = format["storage_box_%1", _i];
@@ -62,7 +62,7 @@ ps_create_boxes = {
   
   
     _pos = _garage modelToWorld [0,0,0];
-    if (_garage isKindOf "Helper_Base_F") then {
+    if (_garage isKindOf "Land_Shed_06_F") then {
       _pos set [2,0];
     };
 
