@@ -42,7 +42,7 @@ _checkExit = {
 if (isNil "_vehicle") exitWith {};
 
 private["_is_uav", "_is_static"];
-_is_uav = (_vehicle isKindOf "UAV_01_base_F" || {_vehicle isKindOf "UAV_02_base_F" || {_vehicle isKindOf "UGV_01_base_F"}});
+_is_uav = (_vehicle isKindOf "UAV_01_base_F" || {_vehicle isKindOf "UAV_02_base_F" || {_vehicle isKindOf "UAV_03_base_F" || {_vehicle isKindOf "UGV_01_base_F"}}});
 _is_static = (_vehicle isKindOf "StaticWeapon");
 
 //check if caller is in vehicle

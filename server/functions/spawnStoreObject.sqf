@@ -180,7 +180,7 @@ if (_key != "" && isPlayer _player && {_isGenStore || _isGunStore || _isVehStore
 				//_object spawn cleanVehicleWreck;
 				//_object setVariable ["A3W_purchasedVehicle", true, true];
 
-				if ({_object isKindOf _x} count ["UAV_02_base_F", "UGV_01_base_F"] > 0) then {
+				if ({_object isKindOf _x} count ["UAV_02_base_F", "UAV_03_base_F", "UGV_01_base_F"] > 0) then {
 					_object setVariable ["A3W_purchasedVehicle", true, true];
 					_object setVariable ["A3W_missionVehicle", false, false];
 					_object setVariable ["ownerUID", getPlayerUID _player, true];

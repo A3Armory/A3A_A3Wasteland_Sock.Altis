@@ -222,7 +222,7 @@ sh_isUAV = {
 
   if (isNil "_class") exitWith {false};
 
-  (_class isKindOf "UAV_02_base_F" || {_class isKindOf "UAV_01_base_F"})
+  (_class isKindOf "UAV_01_base_F" || {_class isKindOf "UAV_02_base_F" || {_class isKindOf "UAV_03_base_F"}})
 };
 
 

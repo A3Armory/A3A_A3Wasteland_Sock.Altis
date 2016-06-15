@@ -91,9 +91,9 @@ v_restoreVehicle = {
 
 
   //removes UAVs and UGVs older then 24 hours
-  if ({_class isKindOf _x} count ["UAV_01_base_F", "UAV_02_base_F", "UGV_01_base_F", "Static_Designator_01_base_F", "Static_Designator_02_base_F"] > 0 && {_hours_alive > 24}) exitWith {
+  /*if ({_class isKindOf _x} count ["UAV_01_base_F", "UAV_02_base_F", "UAV_03_base_F", "UGV_01_base_F", "Static_Designator_01_base_F", "Static_Designator_02_base_F"] > 0 && {_hours_alive > 24}) exitWith {
     diag_log format["vehicle %1(%2) has been alive for %3 (max=%4), skipping it", _vehicle_key, _class, _hours_alive, 24];
-  };
+  };*/
 
   if (not(_ignore_expiration) && {isSCALAR(_hours_alive) && {A3W_vehicleLifetime > 0 && {_hours_alive > A3W_vehicleLifetime}}}) exitWith {
     diag_log format["vehicle %1(%2) has been alive for %3 (max=%4), skipping it", _vehicle_key, _class, _hours_alive, A3W_vehicleLifetime];
@@ -152,7 +152,7 @@ v_restoreVehicle = {
   _obj disableTIEquipment true;
 
   //enables thermal equipment on loaded vehicles for UAVs, UGVs, and Static Designators
-  if ({_obj isKindOf _x} count ["UAV_02_base_F", "UGV_01_base_F", "Static_Designator_01_base_F", "Static_Designator_02_base_F"] > 0) then {
+  if ({_obj isKindOf _x} count ["UAV_02_base_F", "UAV_03_base_F", "UGV_01_base_F", "Static_Designator_01_base_F", "Static_Designator_02_base_F"] > 0) then {
     _obj disableTIEquipment false;
   };
 
