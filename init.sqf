@@ -105,7 +105,7 @@ if (hasInterface || isServer) then
   [] execVM "addons\stickyCharges\init.sqf";
   [] execVM "addons\vsave\vsfunctions.sqf";
   [] execVM "addons\APOC_Airdrop_Assistance\init.sqf";
-  [] execVM "addons\statusBar\statusBar.sqf";   // shows FPS and teamspeak details
+  //[] execVM "addons\statusBar\statusBar.sqf";   // shows FPS and teamspeak details
   [] execVM "addons\bounty\init.sqf";
   if (isNil "drn_DynamicWeather_MainThread") then { drn_DynamicWeather_MainThread = [] execVM "addons\scripts\DynamicWeatherEffects.sqf" };
 };
