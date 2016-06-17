@@ -2,8 +2,8 @@
 // * This project is licensed under the GNU Affero GPL v3. Copyright © 2014 A3Wasteland.com *
 // ******************************************************************************************
 //	@file Version: 1.0
-//	@file Name: isAdmin.sqf
-//	@file Author: AgentRev
+//	@file Name: isDonor.sqf
+//	@file Author: AgentRev edited by Gigatek
 //	@file Created: 13/06/2013 18:02
 
 private ["_result", "_findUIDinArray"];

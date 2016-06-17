@@ -20,7 +20,7 @@ storePurchaseHandle = _this spawn
 {
 	disableSerialization;
 
-	private ["_playerMoney", "_size", "_price", "_dialog", "_itemlist", "_totalText", "_playerMoneyText", "_itemText", "_class", "_uniformClass", "_vestClass", "_backpackClass", "_itemClass", "_markerPos", "_obj", "_currentBinoc", "_confirmResult", "_successHint", "_hasNVG", "_requestKey", "_donatorItems"];
+	private ["_playerMoney", "_size", "_price", "_dialog", "_itemlist", "_totalText", "_playerMoneyText", "_itemText", "_class", "_uniformClass", "_vestClass", "_backpackClass", "_itemClass", "_markerPos", "_obj", "_currentBinoc", "_confirmResult", "_successHint", "_hasNVG", "_requestKey"];
 
 	//Initialize Values
 	_playerMoney = player getVariable ["cmoney", 0];
@@ -35,53 +35,6 @@ storePurchaseHandle = _this spawn
 	_itemIndex = lbCurSel genstore_item_list;
 	_itemText = _itemlist lbText _itemIndex;
 	_itemData = _itemlist lbData _itemIndex;
-
-	_donatorItems =
-	[
-	"G_Goggles_VR",
-	"G_Balaclava_blk",
-	"G_Balaclava_combat",
-	"G_Balaclava_lowprofile",
-	"G_Balaclava_oli",
-	"G_Bandanna_aviator",
-	"G_Bandanna_beast",
-	"G_Bandanna_blk",
-	"G_Bandanna_khk",
-	"G_Bandanna_oli",
-	"G_Bandanna_shades",
-	"G_Bandanna_sport",
-	"G_Bandanna_tan",
-	"G_Aviator",
-	"G_Lady_Blue",
-	"G_Lady_Red",
-	"G_Lady_Mirror",
-	"G_Lady_Dark",
-	"G_Lowprofile",
-	"G_Shades_Black",
-	"G_Shades_Blue",
-	"G_Shades_Green",
-	"G_Shades_Red",
-	"G_Spectacles",
-	"G_Sport_Red",
-	"G_Sport_Blackyellow",
-	"G_Sport_BlackWhite",
-	"G_Sport_Checkered",
-	"G_Sport_Blackred",
-	"G_Sport_Greenblack",
-	"G_Squares_Tinted",
-	"G_Squares",
-	"G_Tactical_Clear",
-	"G_Tactical_Black",
-	"G_Spectacles_Tinted"
-	];
-	//Error for non donators selecting donor items
-	_showInsufficientDonatorError =
-	{
-		_itemText = _this select 0;
-		hint parseText format ["<t color='#ffff00'>This item is only sold to community supporters. Use the items base color\camo.</t><br/>The purchase of ""%1"" has been cancelled.", _itemText];
-		playSound "FD_CP_Not_Clear_F";
-		_price = -1;
-	};
 
 	_showInsufficientFundsError =
 	{
@@ -170,12 +123,6 @@ storePurchaseHandle = _this spawn
 			if (_itemData == _x select 1) exitWith
 			{
 				_class = _x select 1;
-
-				//Check donor status
-				if (!((getPlayerUID player) call isdonor) && {{_x == _class} count _donatorItems > 0}) exitWith
-				{
-					[_itemText] call _showInsufficientDonatorError;
-				};
 
 				if (_x select 3 == "vest") then
 				{
@@ -340,12 +287,6 @@ storePurchaseHandle = _this spawn
 					[_itemText] call _showInsufficientFundsError;
 				};
 
-				//Check donor status
-				if (!((getPlayerUID player) call isdonor) && {{_x == _class} count _donatorItems > 0}) exitWith
-				{
-					[_itemText] call _showInsufficientDonatorError;
-				};        
-        
 				_requestKey = call A3W_fnc_generateKey;
 				call requestStoreObject;
 			};
@@ -399,12 +340,6 @@ storePurchaseHandle = _this spawn
 					[_itemText] call _showInsufficientFundsError;
 				};
 
-				//Check donor status
-				if (!((getPlayerUID player) call isdonor) && {{_x == _class} count _donatorItems > 0}) exitWith
-				{
-					[_itemText] call _showInsufficientDonatorError;
-				};    
-
 				// Confirm replace
 				if (headgear player != "" && {!(["headgear", false, true] call _showReplaceConfirmMessage)}) exitWith {};
 
@@ -433,12 +368,6 @@ storePurchaseHandle = _this spawn
 					[_itemText] call _showInsufficientFundsError;
 				};
 
-				//Check donor status
-				if (!((getPlayerUID player) call isdonor) && {{_x == _class} count _donatorItems > 0}) exitWith
-				{
-					[_itemText] call _showInsufficientDonatorError;
-				};            
-        
 				// Confirm replace
 				if (uniform player != "" && {!(["uniform"] call _showReplaceConfirmMessage)}) exitWith {};
 
@@ -472,12 +401,6 @@ storePurchaseHandle = _this spawn
 					[_itemText] call _showInsufficientFundsError;
 				};
 
-				//Check donor status
-				if (!((getPlayerUID player) call isdonor) && {{_x == _class} count _donatorItems > 0}) exitWith
-				{
-					[_itemText] call _showInsufficientDonatorError;
-				};            
-        
 				// Confirm replace
 				if (vest player != "" && {!(["vest"] call _showReplaceConfirmMessage)}) exitWith {};
 
@@ -505,12 +428,6 @@ storePurchaseHandle = _this spawn
 				{
 					[_itemText] call _showInsufficientFundsError;
 				};
-
-				//Check donor status
-				if (!((getPlayerUID player) call isdonor) && {{_x == _class} count _donatorItems > 0}) exitWith
-				{
-					[_itemText] call _showInsufficientDonatorError;
-				};    
 
 				// Confirm replace
 				if (backpack player != "" && {!(["backpack"] call _showReplaceConfirmMessage)}) exitWith {};
