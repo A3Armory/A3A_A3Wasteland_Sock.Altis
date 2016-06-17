@@ -45,7 +45,7 @@ pvpfw_cleanUp_ruinRadius = 50; // Destroyed Buildings will be deleted if no enti
 // Advanced
 //#define __pvpfw_cleanUp_cleanExtra //comment out this line if you dont need the objects below to be checked
 pvpfw_cleanUp_chemLightTimer = 300; //effectively overrides the max "timeToLive" for the chemlight ammo object which is 900 seconds by default
-pvpfw_cleanUp_pipeBombTimer = 1800; //effectively sets a "timeToLive" limit on all explosives, that can be triggered remotely
+//pvpfw_cleanUp_pipeBombTimer = 1800; //effectively sets a "timeToLive" limit on all explosives, that can be triggered remotely
 
 //////////////////////
 // Custom condition //
