@@ -82,10 +82,10 @@ rifleArray = compileFinal str
 	["Cyrus Rifle (Tan)", "srifle_DMR_05_tan_f", 750],
 
 	// Sniper Rifles
-	["M320 LRR Sniper", "srifle_LRR_LRPS_F", 1000],
-	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_LRPS_F", 1200],
-	["GM6 Lynx Sniper", "srifle_GM6_LRPS_F", 1250],
-	["GM6 Lynx Sniper (Camo)", "srifle_GM6_camo_LRPS_F", 1500],
+	["M320 LRR Sniper", "srifle_LRR_F", 1000],
+	["M320 LRR Sniper (Camo)", "srifle_LRR_camo_F", 1200],
+	["GM6 Lynx Sniper", "srifle_GM6_F", 1250],
+	["GM6 Lynx Sniper (Camo)", "srifle_GM6_camo_F", 1500],
 
 	["ASP-1 Kir Rifle", "srifle_DMR_04_F", 2000],
 	["ASP-1 Kir Rifle (Tan)", "srifle_DMR_04_tan_F", 2000]

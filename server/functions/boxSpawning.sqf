@@ -105,16 +105,16 @@ _boxList =
 					{
 						_boxItems =
 						[
-							["wep", "srifle_DMR_01_DMS_F", 1, 8],
-							["wep", "srifle_GM6_LRPS_F", 1, 8]
+							["wep", "srifle_DMR_01_F", 1, 8],
+							["wep", "srifle_GM6_F", 1, 8]
 						];
 					};
 					case (_box isKindOf "Box_IND_WpsSpecial_F"):
 					{
 						_boxItems =
 						[
-							["wep", "srifle_EBR_DMS_F", 1, 8],
-							["wep", "srifle_GM6_LRPS_F", 1, 8]
+							["wep", "srifle_EBR_F", 1, 8],
+							["wep", "srifle_GM6_F", 1, 8]
 						];
 					};
 					default { _boxItems = [] };
