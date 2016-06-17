@@ -27,12 +27,12 @@ if (_unit == player && (_showWindow || _menuOpen)) then
 				_handled = true;
 			};
 
-			_nearbyMissions = allMapMarkers select {markerType _x == "Empty" && {[["LandConvoy_"], _x] call fn_startsWith && {player distance markerPos _x < _minDist}}};
+			_nearbyMissions = allMapMarkers select {markerType _x == "Empty" && {[["LandConvoy_","VehStore","GenStore"], _x] call fn_startsWith && {player distance markerPos _x < _minDist}}};
 
 			if !(_nearbyMissions isEqualTo []) exitWith
 			{
 				playSound "FD_CP_Not_Clear_F";
-				[format ["You are not allowed to place explosives within %1m of a mission spawn.", _minDist], 5] call mf_notify_client;
+				[format ["You are not allowed to place explosives within %1m of this location.", _minDist], 5] call mf_notify_client;
 				_handled = true;
 			};
 			
